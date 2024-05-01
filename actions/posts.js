@@ -1,5 +1,6 @@
 "use server";
 
+import { uploadImage } from "@/lib/aws";
 import { storePost } from "@/lib/posts";
 import { redirect } from "next/navigation";
 
@@ -26,9 +27,16 @@ export async function createPost(prevState, formData) {
   if (errors.length > 0) {
     return { errors };
   }
-
+  let imageUrl;
+  try {
+    imageUrl = await uploadImage(image);
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to upload image 2");
+  }
+  console.log(imageUrl);
   await storePost({
-    imageUrl: "",
+    imageUrl: imageUrl,
     title,
     content,
     userId: 1,
