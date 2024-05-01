@@ -31,10 +31,8 @@ export async function createPost(prevState, formData) {
   try {
     imageUrl = await uploadImage(image);
   } catch (error) {
-    console.error(error);
     throw new Error("Failed to upload image 2");
   }
-  console.log(imageUrl);
   await storePost({
     imageUrl: imageUrl,
     title,
