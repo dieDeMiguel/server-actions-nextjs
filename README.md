@@ -1,4 +1,4 @@
-# Post Blog.
+# Asynchronous server side data fetching and mutation with NextJS.
 
 On this learing project, the developed application uses a combination of Next.js server components, the `better-sqlite3` library, and AWS S3 to create and manage posts.
 
@@ -12,7 +12,7 @@ On this learing project, the developed application uses a combination of Next.js
 
 When a new post is created, the `createPost` server action is called with the form data. This action validates the form data, uploads the image to AWS S3 using the `uploadImage` function, and stores the post data in the SQLite database using the `storePost` function. The URL of the uploaded image is stored in the `image_url` column of the `posts` table.
 
-**Installation**
+## **Installation**
 
 Install project dependencies:
 
@@ -22,69 +22,27 @@ npm install
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`VARIABLE_NAME`
-
-`VARIABLE_NAME`
-
-## **Run Locally**
-
-Clone the project
-
-git clone https://link-to-project
-
-Go to the project directory
-
-cd my-project
-
-Install dependencies
-
-npm install
-
-Start the server
-
-npm run start
-
-## **Running Tests**
-
-To run tests, run the following command
-
-npm run test
-
-## **Features**
-
-- Feature 1
-- Feature 2
-- Feature 3
-
-## **API Reference**
-
-#### Get all items
-
-GET /api/items
-
-#### Get item
-
-GET /api/items/${id}
-
-## **Lessons Learned**
-
-What did you learn while building this project? What challenges did you face and how did you overcome them?
+```properties
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_S3_BUCKET=
+AWS_REGION=
+```
 
 ## **Tech Stack**
 
-**Client:** React, Next.js
+**Client:** React, Next.js.
 
-**Server:** Node, Express
+### **Server:** Node, "better-sqlite3" \
+
+\
+Topics Learned:\
+useOptimisitc, data fetching and mutation
 
 ## **Authors**
 
-- [@yourusername](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
+- [@dieDeMiguel](https://github.com/dieDeMiguel)
 
 ## **License**
 
 [MIT](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
-
-## **Acknowledgements**
-
-- [Awesome README templates and best practices](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
-- [How to write a Good readme](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
